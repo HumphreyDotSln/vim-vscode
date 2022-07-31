@@ -157,7 +157,7 @@ export class FileCommand extends ExCommand {
 
     // No file was specified
     if (args.file === undefined) {
-      if (args.createFileIfNotExists === true) {
+      if (args.createFileIfNotExists && !split) {
         await vscode.commands.executeCommand('workbench.action.files.newUntitledFile');
         await hidePreviousEditor();
       }
